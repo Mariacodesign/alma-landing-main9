@@ -147,10 +147,36 @@ if (form && feedback) {
   });
 
   form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
     if (!validateForm({ showMessages: true })) {
       event.preventDefault();
       return;
     }
+
+    fetch('https://formspree.io/f/mykbkryg', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        Accept: 'application/json'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Formspree request failed');
+        }
+
+        form.reset();
+        setFieldState(nameInput, '');
+        setFieldState(emailInput, '');
+        emailInput.setAttribute('aria-invalid', 'false');
+        window.location.assign('gracias.html');
+      })
+      .catch(() => {
+        feedback.textContent = 'No se ha podido enviar la guía ahora mismo. Inténtalo de nuevo en un momento.';
+        feedback.classList.remove('is-success');
+        feedback.classList.add('is-error');
+      });
   });
 
   validateForm();
