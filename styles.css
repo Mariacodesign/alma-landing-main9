@@ -809,8 +809,9 @@ input.is-invalid {
 
   .hero-copy {
     font-size: 1.08rem;
-    max-width: 34ch;
+    max-width: 38ch;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.72;
   }
 
@@ -829,9 +830,10 @@ input.is-invalid {
   #problem .problem-support,
   #problem .problem-closing {
     font-size: 1.08rem;
-    max-width: 32ch;
+    max-width: 36ch;
     margin-inline: auto;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.72;
   }
 
@@ -843,8 +845,9 @@ input.is-invalid {
 
   .authority-content p {
     font-size: 1.08rem;
-    max-width: 34ch;
+    max-width: 38ch;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.72;
   }
 }
@@ -875,8 +878,9 @@ input.is-invalid {
 
   .hero-copy {
     font-size: 1.04rem;
-    max-width: 30ch;
+    max-width: 35ch;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.74;
   }
 
@@ -901,7 +905,7 @@ input.is-invalid {
   }
 
   #problem .problem-textbox {
-    width: min(100%, 31ch);
+    width: min(100%, 35ch);
     margin-inline: auto;
   }
 
@@ -915,9 +919,10 @@ input.is-invalid {
   #problem .problem-support,
   #problem .problem-closing {
     font-size: 1.04rem;
-    max-width: 31ch;
+    max-width: 35ch;
     margin-inline: auto;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.74;
   }
 
@@ -929,8 +934,9 @@ input.is-invalid {
 
   .authority-content p {
     font-size: 1.04rem;
-    max-width: 31ch;
+    max-width: 35ch;
     text-wrap: pretty;
+    hyphens: auto;
     line-height: 1.74;
   }
 
