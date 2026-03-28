@@ -147,13 +147,10 @@ if (form && feedback) {
   });
 
   form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
     if (!validateForm({ showMessages: true })) {
+      event.preventDefault();
       return;
     }
-
-    window.location.assign(new URL('gracias.html', window.location.href).href);
   });
 
   validateForm();
