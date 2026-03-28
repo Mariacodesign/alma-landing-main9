@@ -77,8 +77,6 @@ const feedback = document.querySelector('.form-feedback');
 if (form && feedback) {
   const nameInput = form.querySelector('#name');
   const emailInput = form.querySelector('#email');
-  const submitButton = form.querySelector('button[type="submit"]');
-
   const setFieldState = (input, state) => {
     input.classList.remove('is-valid', 'is-invalid');
 
@@ -102,8 +100,6 @@ if (form && feedback) {
     }
 
     emailInput.setAttribute('aria-invalid', String(emailValue !== '' && !emailIsValid));
-    submitButton.disabled = !formIsValid;
-
     if (!showMessages) {
       feedback.textContent = emailIsValid ? 'Email valido. Ya puedes recibir la guia.' : '';
       feedback.classList.remove('is-error', 'is-success');
@@ -157,11 +153,7 @@ if (form && feedback) {
       return;
     }
 
-    form.reset();
-    setFieldState(nameInput, '');
-    setFieldState(emailInput, '');
-    emailInput.setAttribute('aria-invalid', 'false');
-    submitButton.disabled = true;
+    window.location.assign(new URL('gracias.html', window.location.href).href);
   });
 
   validateForm();
