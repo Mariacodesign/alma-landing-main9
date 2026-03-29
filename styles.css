@@ -968,20 +968,23 @@ input.is-invalid {
   }
 
   .hero-content h1 {
-    max-width: 10.5ch;
-    font-size: clamp(1.95rem, 8vw, 2.85rem);
-    line-height: 1.01;
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1.72rem, 6.9vw, 2.3rem);
+    line-height: 1.04;
     letter-spacing: -0.03em;
     text-wrap: balance;
     text-align: left;
   }
 
   .hero-copy {
-    max-width: 34ch;
+    width: 100%;
+    max-width: none;
     font-size: 0.97rem;
-    line-height: 1.66;
+    line-height: 1.68;
     text-wrap: pretty;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .hero-cta-group {
