@@ -836,11 +836,11 @@ input.is-invalid {
   }
 
   .eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
+    font-size: 0.84rem;
+    letter-spacing: 0.12em;
     font-weight: 500;
     line-height: 1.25;
-    opacity: 0.78;
+    opacity: 1;
   }
 
   h2 {
@@ -1023,11 +1023,11 @@ input.is-invalid {
   }
 
   .eyebrow {
-    font-size: 0.52rem;
-    letter-spacing: 0.09em;
+    font-size: 0.84rem;
+    letter-spacing: 0.12em;
     font-weight: 500;
-    line-height: 1.2;
-    opacity: 0.76;
+    line-height: 1.25;
+    opacity: 1;
   }
 
   h2 {
