@@ -839,6 +839,8 @@ input.is-invalid {
     font-size: 0.62rem;
     letter-spacing: 0.1em;
     font-weight: 500;
+    line-height: 1.25;
+    opacity: 0.78;
   }
 
   h2 {
@@ -911,9 +913,7 @@ input.is-invalid {
 
   .hero-content .eyebrow {
     margin-bottom: 0;
-    line-height: 1.25;
     text-align: left;
-    opacity: 0.78;
   }
 
   .hero-content h1 {
@@ -1026,6 +1026,8 @@ input.is-invalid {
     font-size: 0.52rem;
     letter-spacing: 0.09em;
     font-weight: 500;
+    line-height: 1.2;
+    opacity: 0.76;
   }
 
   h2 {
@@ -1075,9 +1077,7 @@ input.is-invalid {
 
   .hero-content .eyebrow {
     margin-bottom: 0;
-    line-height: 1.2;
     text-align: left;
-    opacity: 0.76;
   }
 
   .hero-content h1 {
