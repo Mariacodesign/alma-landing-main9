@@ -791,6 +791,45 @@ input.is-invalid {
     width: min(100% - 48px, var(--container-max));
   }
 
+  .header-inner {
+    min-height: 70px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0.72rem 1.3rem;
+    font-size: 0.92rem;
+  }
+
+  .btn-sm {
+    min-height: 40px;
+    padding: 0.48rem 1rem;
+    font-size: 0.79rem;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  h2 {
+    max-width: none;
+    text-wrap: balance;
+    text-align: left;
+  }
+
+  p {
+    max-width: none;
+    text-align: left;
+    text-wrap: pretty;
+    line-height: 1.7;
+  }
+
   .authority-grid,
   .form-shell,
   .testimonials-shell {
@@ -846,11 +885,11 @@ input.is-invalid {
 
   .hero-content .eyebrow {
     margin-bottom: 0;
-    font-size: 0.66rem;
-    letter-spacing: 0.11em;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
     line-height: 1.25;
     text-align: left;
-    opacity: 0.82;
+    opacity: 0.78;
   }
 
   .hero-content h1 {
@@ -864,9 +903,9 @@ input.is-invalid {
 
   .hero-copy {
     max-width: 52ch;
-    font-size: 1.02rem;
+    font-size: 1rem;
     text-wrap: pretty;
-    line-height: 1.68;
+    line-height: 1.66;
     text-align: left;
   }
 
@@ -876,20 +915,23 @@ input.is-invalid {
   }
 
   .hero-cta-group .btn {
-    min-height: 50px;
-    padding: 0.76rem 1.35rem;
+    min-height: 46px;
+    padding: 0.68rem 1.2rem;
+    font-size: 0.88rem;
   }
 
   #problem h2 {
-    max-width: 10ch;
-    margin-inline: auto;
+    max-width: 12ch;
+    margin-inline: 0;
     text-wrap: balance;
     line-height: 1.06;
+    text-align: left;
   }
 
   #problem .problem-textbox {
-    width: min(100%, 34rem);
-    margin-inline: auto;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
   }
 
   #problem .problem-support,
@@ -902,16 +944,24 @@ input.is-invalid {
   }
 
   .authority-content h2 {
-    max-width: 12ch;
+    max-width: 14ch;
     text-wrap: balance;
     line-height: 1.08;
+    text-align: left;
   }
 
   .authority-content p {
-    font-size: 1.08rem;
+    font-size: 1rem;
     max-width: none;
     text-wrap: pretty;
-    line-height: 1.72;
+    line-height: 1.7;
+  }
+
+  .testimonials-intro h2,
+  #contact h2,
+  #learn h2 {
+    max-width: 14ch;
+    text-align: left;
   }
 }
 
@@ -921,11 +971,46 @@ input.is-invalid {
   }
 
   .header-inner {
-    min-height: 70px;
+    min-height: 64px;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
   }
 
   .brand-sub {
     display: none;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 0.66rem 1.1rem;
+    font-size: 0.88rem;
+  }
+
+  .btn-sm {
+    min-height: 36px;
+    padding: 0.42rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  .eyebrow {
+    font-size: 0.56rem;
+    letter-spacing: 0.09em;
+    font-weight: 500;
+  }
+
+  h2 {
+    max-width: none;
+    text-wrap: balance;
+    text-align: left;
+  }
+
+  p {
+    max-width: none;
+    text-align: left;
+    text-wrap: pretty;
+    line-height: 1.68;
   }
 
   .hero {
@@ -960,11 +1045,11 @@ input.is-invalid {
 
   .hero-content .eyebrow {
     margin-bottom: 0;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
+    font-size: 0.52rem;
+    letter-spacing: 0.09em;
     line-height: 1.2;
     text-align: left;
-    opacity: 0.8;
+    opacity: 0.76;
   }
 
   .hero-content h1 {
@@ -980,11 +1065,10 @@ input.is-invalid {
   .hero-copy {
     width: 100%;
     max-width: none;
-    font-size: 0.97rem;
-    line-height: 1.68;
+    font-size: 0.95rem;
+    line-height: 1.64;
     text-wrap: pretty;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
   }
 
   .hero-cta-group {
@@ -995,9 +1079,9 @@ input.is-invalid {
 
   .hero-cta-group .btn {
     width: 100%;
-    min-height: 48px;
-    padding: 0.72rem 1.2rem;
-    font-size: 0.92rem;
+    min-height: 42px;
+    padding: 0.62rem 1rem;
+    font-size: 0.84rem;
   }
 
   .testimonials-grid {
@@ -1018,10 +1102,11 @@ input.is-invalid {
   }
 
   #problem h2 {
-    max-width: 9ch;
-    margin-inline: auto;
+    max-width: 11ch;
+    margin-inline: 0;
     text-wrap: balance;
     line-height: 1.08;
+    text-align: left;
   }
 
   #problem .problem-support,
@@ -1034,16 +1119,24 @@ input.is-invalid {
   }
 
   .authority-content h2 {
-    max-width: 10ch;
+    max-width: 13ch;
     text-wrap: balance;
     line-height: 1.1;
+    text-align: left;
   }
 
   .authority-content p {
-    font-size: 1.04rem;
+    font-size: 0.98rem;
     max-width: none;
     text-wrap: pretty;
-    line-height: 1.74;
+    line-height: 1.68;
+  }
+
+  .testimonials-intro h2,
+  #contact h2,
+  #learn h2 {
+    max-width: 13ch;
+    text-align: left;
   }
 
   .learn-header {
