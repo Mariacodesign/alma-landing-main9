@@ -336,6 +336,7 @@ h3 {
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 62ch;
 }
 
 .hero-content > * + * {
@@ -457,6 +458,16 @@ h3 {
   display: grid;
   gap: 1rem;
   max-width: 62ch;
+}
+
+.authority-content h2 {
+  max-width: none;
+  line-height: 1.02;
+}
+
+.authority-content p {
+  max-width: 62ch;
+  line-height: var(--body-copy-line-height);
 }
 
 .authority-link {
@@ -782,11 +793,12 @@ input.is-invalid {
 }
 
 #contact h2 {
-  max-width: 16ch;
+  max-width: 19ch;
   margin-left: auto;
   margin-right: auto;
   text-wrap: balance;
-  line-height: 1.08;
+  line-height: 1.04;
+  text-align: center;
 }
 
 .site-footer {
