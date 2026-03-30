@@ -700,8 +700,14 @@ input.is-invalid {
   max-width: 28rem;
 }
 
+.authority-content .eyebrow,
 .testimonials-intro .eyebrow {
+  display: block;
   margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 1.4rem;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
 }
 
 .testimonials-intro h2 {
@@ -776,8 +782,11 @@ input.is-invalid {
 }
 
 #contact h2 {
+  max-width: 16ch;
   margin-left: auto;
   margin-right: auto;
+  text-wrap: balance;
+  line-height: 1.08;
 }
 
 .site-footer {
