@@ -947,7 +947,7 @@ input.is-invalid {
     line-height: 1.06;
     letter-spacing: -0.025em;
     text-wrap: balance;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-copy {
@@ -1114,7 +1114,7 @@ input.is-invalid {
     line-height: 1.08;
     letter-spacing: -0.025em;
     text-wrap: balance;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-copy {
