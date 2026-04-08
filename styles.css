@@ -1068,6 +1068,10 @@ input.is-invalid {
 }
 
 @media (min-width: 761px) and (max-width: 1060px) {
+  :root {
+    --tablet-eyebrow-inset: 1.5rem;
+  }
+
   .section {
     padding: clamp(64px, 8vw, 96px) 0;
   }
@@ -1146,6 +1150,16 @@ input.is-invalid {
   }
 
   .hero-cta-group {
+    padding-left: 0;
+  }
+
+  #problem .problem-label,
+  .authority-content .eyebrow,
+  .learn-header .eyebrow,
+  .form-intro .eyebrow,
+  .testimonials-intro .eyebrow,
+  #contact .eyebrow {
+    margin-left: var(--tablet-eyebrow-inset);
     padding-left: 0;
   }
 
