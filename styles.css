@@ -1137,7 +1137,7 @@ input.is-invalid {
 
   .hero-content h1 {
     position: absolute;
-    top: calc(78px + clamp(92px, 11vw, 116px));
+    top: calc(78px + 3.5rem);
     left: 1.5rem;
     max-width: 10ch;
     margin: 0;
