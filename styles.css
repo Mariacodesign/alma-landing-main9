@@ -1076,20 +1076,23 @@ input.is-invalid {
     position: relative;
     padding-top: 78px;
     padding-bottom: 56px;
+    overflow: hidden;
   }
 
   .hero-media,
   .hero-overlay {
     position: absolute;
-    inset: 0;
+    top: 78px;
+    left: 24px;
+    right: 24px;
+    height: clamp(320px, 42vw, 400px);
+    border-radius: 24px;
   }
 
   .hero-media {
-    width: 100%;
-    aspect-ratio: auto;
+    width: auto;
     max-height: none;
-    height: 100%;
-    border-radius: 0;
+    overflow: hidden;
   }
 
   .hero-media img,
@@ -1121,14 +1124,15 @@ input.is-invalid {
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    padding-top: clamp(300px, 46vw, 380px);
+    padding-top: calc(clamp(320px, 42vw, 400px) + 1.4rem);
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
     text-align: left;
   }
 
   .hero-content h1 {
     position: absolute;
-    top: clamp(108px, 15vw, 132px);
+    top: calc(78px + clamp(92px, 11vw, 116px));
     left: 1.5rem;
     max-width: 10ch;
     margin: 0;
