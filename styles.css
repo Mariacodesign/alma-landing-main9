@@ -1137,7 +1137,7 @@ input.is-invalid {
 
   .hero-content h1 {
     position: absolute;
-    top: calc(78px + 3.5rem);
+    top: calc(78px + 2.85rem);
     left: 1.5rem;
     max-width: 10ch;
     margin: 0;
@@ -1174,7 +1174,7 @@ input.is-invalid {
   .hero-eyebrow {
     left: 24px;
     right: 24px;
-    top: calc(78px + 1.5rem);
+    top: calc(78px + 0.85rem);
     margin: 0;
   }
 
