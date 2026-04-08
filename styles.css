@@ -1073,8 +1073,36 @@ input.is-invalid {
   }
 
   .hero {
+    position: relative;
     padding-top: 78px;
     padding-bottom: 56px;
+  }
+
+  .hero-media,
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-media {
+    width: 100%;
+    aspect-ratio: auto;
+    max-height: none;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .hero-media img,
+  .hero-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+  }
+
+  .hero-overlay {
+    display: block;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.28) 0%, rgba(10, 10, 10, 0.62) 100%);
   }
 
   .hero-content,
@@ -1085,21 +1113,36 @@ input.is-invalid {
     max-width: 40rem;
   }
 
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 48px, var(--container-max));
+    max-width: none;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: clamp(300px, 46vw, 380px);
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    position: absolute;
+    top: clamp(108px, 15vw, 132px);
+    left: 1.5rem;
+    max-width: 10ch;
+    margin: 0;
+    z-index: 3;
+    text-align: left;
+  }
+
   .hero-copy {
     max-width: 40rem;
+    padding-left: 0;
   }
 
-  #problem .problem-label,
-  #problem .problem-body {
-    width: min(100%, 40rem);
-  }
-
-  #problem h2 {
-    text-wrap: balance;
-  }
-
-  #problem .problem-textbox {
-    padding: 1.9rem 2rem 2rem;
+  .hero-cta-group {
+    padding-left: 0;
   }
 
   .authority-grid,
