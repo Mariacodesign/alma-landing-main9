@@ -1070,6 +1070,7 @@ input.is-invalid {
 @media (min-width: 761px) and (max-width: 1060px) {
   :root {
     --tablet-eyebrow-inset: 1.5rem;
+    --tablet-eyebrow-width: min(100%, 38rem);
   }
 
   .section {
@@ -1153,14 +1154,28 @@ input.is-invalid {
     padding-left: 0;
   }
 
+  .hero-eyebrow,
   #problem .problem-label,
   .authority-content .eyebrow,
   .learn-header .eyebrow,
   .form-intro .eyebrow,
   .testimonials-intro .eyebrow,
   #contact .eyebrow {
-    margin-left: var(--tablet-eyebrow-inset);
-    padding-left: 0;
+    width: var(--tablet-eyebrow-width);
+    max-width: var(--tablet-eyebrow-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--tablet-eyebrow-inset);
+    padding-right: 0;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .hero-eyebrow {
+    left: 24px;
+    right: 24px;
+    top: calc(78px + 1.5rem);
+    margin: 0;
   }
 
   .authority-grid,
