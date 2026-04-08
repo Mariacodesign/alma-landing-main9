@@ -1067,6 +1067,59 @@ input.is-invalid {
   }
 }
 
+@media (min-width: 761px) and (max-width: 1060px) {
+  .section {
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+
+  .hero {
+    padding-top: 78px;
+    padding-bottom: 56px;
+  }
+
+  .hero-content,
+  .learn-header,
+  .form-intro,
+  .testimonials-intro,
+  .authority-content {
+    max-width: 40rem;
+  }
+
+  .hero-copy {
+    max-width: 40rem;
+  }
+
+  #problem .problem-label,
+  #problem .problem-body {
+    width: min(100%, 40rem);
+  }
+
+  #problem h2 {
+    text-wrap: balance;
+  }
+
+  #problem .problem-textbox {
+    padding: 1.9rem 2rem 2rem;
+  }
+
+  .authority-grid,
+  .form-shell {
+    gap: 2.4rem;
+  }
+
+  .testimonials-shell {
+    gap: 2.8rem;
+  }
+
+  .guide-item {
+    padding: 1.7rem 1.75rem;
+  }
+
+  .guide-copy {
+    padding-left: 0.35rem;
+  }
+}
+
 @media (max-width: 760px) {
   .container {
     width: min(100% - 40px, var(--container-max));
