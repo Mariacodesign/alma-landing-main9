@@ -16,6 +16,7 @@
   --content-narrow: 860px;
   --text-column-width: 62ch;
   --desktop-text-offset: clamp(32px, 4vw, 64px);
+  --problem-section-width: min(100%, 42rem);
   --radius-card: 24px;
   --radius-button: 999px;
   --radius-input: 16px;
@@ -380,54 +381,61 @@ h3 {
 #problem .problem-editorial {
   display: grid;
   gap: 0;
-  width: min(var(--text-column-width), 100%);
-  max-width: var(--text-column-width);
-  margin-left: 0;
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
   margin-right: auto;
+  justify-items: center;
 }
 
 #problem .problem-label {
   display: block;
+  width: auto;
+  justify-self: start;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 1.4rem;
   letter-spacing: 0.14em;
   opacity: 0.8;
+  text-align: left;
 }
 
 #problem .problem-body {
   display: grid;
   gap: 0;
-  justify-items: start;
+  width: var(--problem-section-width);
+  justify-items: stretch;
 }
 
 #problem .problem-textbox {
   width: 100%;
-  max-width: var(--text-column-width);
+  max-width: none;
   margin-top: 1.8rem;
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  padding: 2rem 2rem 2.1rem;
+  border: 1px solid rgba(245, 243, 238, 0.09);
+  border-radius: var(--radius-card);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.48));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
   text-align: left;
   transition: transform 180ms ease, border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 #problem .problem-textbox:hover {
-  transform: scale(1.012);
-  border-color: transparent;
-  box-shadow: none;
+  transform: translateY(-2px);
+  border-color: rgba(198, 164, 108, 0.18);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
 }
 
 #problem h2 {
-  max-width: 11ch;
+  width: 100%;
+  max-width: none;
   margin-top: 0;
   font-size: clamp(2.8rem, 5vw, 4.35rem);
   line-height: 1.02;
-  text-align: left;
+  text-align: center;
+  text-wrap: nowrap;
 }
 
 #problem .problem-support {
@@ -436,6 +444,9 @@ h3 {
   font-size: 1.15rem;
   line-height: 1.65;
   color: rgba(245, 243, 238, 0.74);
+  text-align: left;
+  position: relative;
+  padding-left: 1.75rem;
 }
 
 #problem .problem-closing {
@@ -444,6 +455,20 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.65;
   color: rgba(245, 243, 238, 0.9);
+  text-align: left;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+#problem .problem-support::before,
+#problem .problem-closing::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0.02em;
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 #problem .problem-textbox > * + * {
@@ -1008,9 +1033,37 @@ input.is-invalid {
     max-width: var(--text-column-width);
   }
 
+  #problem .problem-editorial {
+    width: 100%;
+    max-width: none;
+  }
+
+  #problem .problem-label,
+  #problem .problem-body {
+    width: min(100%, 38rem);
+  }
+
+  #problem .problem-body {
+    justify-items: stretch;
+  }
+
+  #problem h2 {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+
   #problem .problem-textbox {
     width: 100%;
-    margin-inline: 0;
+    max-width: none;
+    margin-inline: auto;
+    padding: 1.8rem 1.8rem 1.95rem;
+  }
+
+  #problem .problem-support,
+  #problem .problem-closing {
+    text-align: left;
   }
 }
 
