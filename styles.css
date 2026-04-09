@@ -12,7 +12,7 @@
   --color-gold-soft: rgba(198, 164, 108, 0.16);
   --color-gold-hover: #d7b47a;
   --color-black: #0a0a0a;
-  --container-max: 1280px;
+  --container-max: 1312px;
   --content-narrow: 860px;
   --text-column-width: 62ch;
   --desktop-text-offset: clamp(32px, 4vw, 64px);
@@ -145,8 +145,10 @@ h3 {
 
 /* 4. Layout */
 .container {
-  width: min(100% - 64px, var(--container-max));
-  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 16px;
+  margin: 0 auto;
 }
 
 .narrow {
@@ -168,7 +170,7 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  width: min(100% - 64px, var(--container-max));
+  width: min(calc(100% - 32px), calc(var(--container-max) - 32px));
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -281,11 +283,16 @@ h3 {
 
 .hero {
   min-height: 100vh;
+  padding-top: 116px;
+  overflow: hidden;
+}
+
+.hero-shell {
+  position: relative;
+  min-height: calc(100vh - 116px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 116px;
-  overflow: hidden;
 }
 
 .hero-media,
@@ -298,6 +305,7 @@ h3 {
   position: absolute;
 }
 
+.hero-media img,
 .hero-media video {
   width: 100%;
   height: 100%;
@@ -328,7 +336,7 @@ h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(var(--text-column-width), calc(100% - 64px));
+  width: min(var(--text-column-width), 100%);
   max-width: var(--text-column-width);
   margin-left: var(--desktop-text-offset);
   margin-right: auto;
@@ -846,14 +854,6 @@ input.is-invalid {
 }
 
 @media (max-width: 1060px) {
-  .container {
-    width: min(100% - 48px, var(--container-max));
-  }
-
-  .section::after {
-    width: min(100% - 48px, var(--container-max));
-  }
-
   .header-inner {
     min-height: 70px;
   }
@@ -961,9 +961,13 @@ input.is-invalid {
 
   .hero {
     min-height: auto;
-    display: block;
     padding-top: 76px;
     padding-bottom: 52px;
+  }
+
+  .hero-shell {
+    min-height: auto;
+    display: block;
   }
 
   .hero-media,
@@ -1084,12 +1088,16 @@ input.is-invalid {
     overflow: hidden;
   }
 
+  .hero-shell {
+    position: relative;
+  }
+
   .hero-media,
   .hero-overlay {
     position: absolute;
-    top: 78px;
-    left: 24px;
-    right: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
     height: clamp(320px, 42vw, 400px);
     border-radius: 24px;
   }
@@ -1124,11 +1132,11 @@ input.is-invalid {
   .hero-content {
     position: relative;
     z-index: 2;
-    width: min(100% - 48px, var(--container-max));
+    width: 100%;
     max-width: none;
     margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     padding-top: calc(clamp(320px, 42vw, 400px) + 1.4rem);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1137,7 +1145,7 @@ input.is-invalid {
 
   .hero-content h1 {
     position: absolute;
-    top: calc(78px + 2.85rem);
+    top: 2.85rem;
     left: 1.5rem;
     max-width: 10ch;
     margin: 0;
@@ -1172,9 +1180,9 @@ input.is-invalid {
   }
 
   .hero-eyebrow {
-    left: 24px;
-    right: 24px;
-    top: calc(78px + 0.85rem);
+    left: 0;
+    right: 0;
+    top: 0.85rem;
     margin: 0;
   }
 
@@ -1197,14 +1205,6 @@ input.is-invalid {
 }
 
 @media (max-width: 760px) {
-  .container {
-    width: min(100% - 40px, var(--container-max));
-  }
-
-  .section::after {
-    width: min(100% - 40px, var(--container-max));
-  }
-
   .header-inner {
     min-height: 64px;
     gap: 0.75rem;
@@ -1269,9 +1269,13 @@ input.is-invalid {
 
   .hero {
     min-height: auto;
-    display: block;
     padding-top: 70px;
     padding-bottom: 42px;
+  }
+
+  .hero-shell {
+    min-height: auto;
+    display: block;
   }
 
   .hero-media {
