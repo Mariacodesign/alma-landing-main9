@@ -12,7 +12,7 @@
   --color-gold-soft: rgba(198, 164, 108, 0.16);
   --color-gold-hover: #d7b47a;
   --color-black: #0a0a0a;
-  --container-max: 1280px;
+  --container-max: 1312px;
   --content-narrow: 860px;
   --text-column-width: 62ch;
   --desktop-text-offset: clamp(32px, 4vw, 64px);
@@ -95,7 +95,7 @@ h2 {
   line-height: 1.12;
   letter-spacing: -0.02em;
   font-weight: 600;
-  max-width: 20ch;
+  max-width: 768px;
 }
 
 h3 {
@@ -144,8 +144,10 @@ h3 {
 
 /* 4. Layout */
 .container {
-  width: min(100% - 64px, var(--container-max));
+  width: 100%;
+  max-width: var(--container-max);
   margin-inline: auto;
+  padding-inline: 16px;
 }
 
 .narrow {
@@ -167,7 +169,7 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  width: min(100% - 64px, var(--container-max));
+  width: min(100%, var(--container-max));
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -279,6 +281,7 @@ h3 {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
   padding-top: 116px;
   overflow: hidden;
@@ -296,11 +299,11 @@ h3 {
 .hero-media,
 .hero-overlay {
   position: absolute;
-  inset: 0;
-}
-
-.hero-media {
-  position: absolute;
+  top: 0;
+  bottom: 0;
+  
+  width: 100vw;
+  
 }
 
 .hero-media img,
@@ -312,11 +315,7 @@ h3 {
 }
 
 .hero-eyebrow {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  z-index: 1;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 .hero-overlay {
@@ -354,17 +353,8 @@ h3 {
 }
 
 @media (min-width: 1061px) {
-  .container {
-    width: 100%;
-    max-width: var(--container-max);
-    padding-left: 48px;
-    padding-right: 48px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
   .section::after {
-    width: min(calc(100% - 96px), calc(var(--container-max) - 96px));
+    width: min(100%, var(--container-max));
   }
 
   .btn {
@@ -372,22 +362,6 @@ h3 {
     padding: 0.85rem 1.35rem;
     font-size: 0.95rem;
     line-height: 1.2;
-  }
-
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    padding-top: 116px;
-    overflow: hidden;
-  }
-
-  .hero-shell {
-    position: relative;
-    z-index: 2;
-    min-height: calc(100vh - 116px);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
   }
 
   .hero-content {
@@ -402,16 +376,6 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 2rem;
-  }
-
-  .hero-media,
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
   }
 
   .hero-media {
@@ -488,7 +452,7 @@ h3 {
   .cta-block > p:not(.eyebrow) {
     font-size: 1.125rem;
     line-height: 1.72;
-    text-align: left;
+    text-align: inherit;
   }
 
   .hero-copy {
@@ -501,14 +465,6 @@ h3 {
     flex: 0 0 auto;
   }
 
-  .hero-eyebrow {
-    position: absolute;
-    top: 1.5rem;
-    left: 48px;
-    z-index: 1;
-    margin: 0;
-  }
-
   #problem .problem-editorial,
   #problem .problem-textbox,
   .authority-content,
@@ -519,14 +475,6 @@ h3 {
     max-width: none;
     margin-left: 0;
     margin-right: auto;
-  }
-
-  #problem .problem-editorial {
-    width: min(100%, 66rem);
-  }
-
-  #problem .problem-textbox {
-    width: min(100%, 60rem);
   }
 
   .learn-header {
@@ -547,18 +495,23 @@ h3 {
 
   .cta-block {
     max-width: 46rem;
+    margin-inline: auto;
   }
 
   #contact .eyebrow,
   #contact h2,
   #contact .cta-block > p:not(.eyebrow) {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* 7. Sections */
+.narrow {
+  width: 100%;
+}
+
 #contact .narrow {
   display: grid;
   gap: 1.25rem;
@@ -585,10 +538,10 @@ h3 {
 #problem .problem-editorial {
   display: grid;
   gap: 0;
-  width: min(var(--text-column-width), 100%);
-  max-width: var(--text-column-width);
-  margin-left: 0;
-  margin-right: auto;
+  width: min(100%, 1024px);
+  max-width: 1024px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 #problem .problem-label {
@@ -598,26 +551,26 @@ h3 {
   padding-bottom: 1.4rem;
   letter-spacing: 0.14em;
   opacity: 0.8;
+  text-align:center;
 }
 
 #problem .problem-body {
   display: grid;
   gap: 0;
-  justify-items: start;
+  justify-items: center;
 }
 
 #problem .problem-textbox {
   width: 100%;
-  max-width: var(--text-column-width);
+  max-width: 1024px;
   margin-top: 1.8rem;
-  margin-left: 0;
-  margin-right: auto;
+  margin-inline: auto;
   padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  text-align: left;
+  text-align: center;
   transition: transform 180ms ease, border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -628,11 +581,11 @@ h3 {
 }
 
 #problem h2 {
-  max-width: 11ch;
+  max-width: 768px;
   margin-top: 0;
   font-size: clamp(2.8rem, 5vw, 4.35rem);
   line-height: 1.02;
-  text-align: left;
+  text-align: center;
 }
 
 #problem .problem-support {
@@ -769,7 +722,7 @@ h3 {
 .guide-copy {
   display: grid;
   gap: 0.85rem;
-  max-width: 62ch;
+  max-width: 100%;
   padding-top: 0.2rem;
   padding-left: 0.8rem;
 }
@@ -782,7 +735,7 @@ h3 {
 
 .guide-copy p {
   color: rgba(245, 243, 238, 0.68);
-  max-width: 58ch;
+  width:100%;
 }
 
 .guide-item.is-pending {
@@ -796,8 +749,8 @@ h3 {
 }
 
 #learn h2 {
-  width: min(100%, 42ch);
-  max-width: none;
+  width: 100%;
+  max-width: 768px;
   text-wrap: balance;
 }
 
@@ -920,7 +873,7 @@ input.is-invalid {
 }
 
 .testimonials-intro h2 {
-  max-width: 12ch;
+  max-width: 768px;
 }
 
 .testimonials-intro p:last-child {
@@ -974,15 +927,16 @@ input.is-invalid {
 
 /* 11. Footer */
 .cta-block {
-  text-align: left;
+  text-align: center;
   display: grid;
   gap: 1rem;
+  justify-items: center;
 }
 
 #contact .eyebrow {
-  margin-left: calc((min(100vw - 64px, var(--content-narrow)) - min(100vw - 64px, var(--container-max))) / 2);
-  text-align: left;
-  justify-self: start;
+  margin-left: 0;
+  text-align: center;
+  justify-self: center;
 }
 
 #contact h2,
@@ -1026,12 +980,8 @@ input.is-invalid {
 }
 
 @media (max-width: 1060px) {
-  .container {
-    width: min(100% - 48px, var(--container-max));
-  }
-
   .section::after {
-    width: min(100% - 48px, var(--container-max));
+    width: min(100%, var(--container-max));
   }
 
   .header-inner {
@@ -1086,7 +1036,7 @@ input.is-invalid {
   }
 
   h2 {
-    max-width: 14ch;
+    max-width: 768px;
     font-size: clamp(2.4rem, 4.8vw, 3.8rem);
   }
 
@@ -1103,7 +1053,7 @@ input.is-invalid {
   #contact h2,
   #learn h2,
   #form-title {
-    max-width: 14ch;
+    
     font-size: clamp(2.4rem, 4.8vw, 3.8rem);
     line-height: 1.06;
   }
@@ -1126,13 +1076,46 @@ input.is-invalid {
   }
 
   .authority-grid,
-  .form-shell,
-  .testimonials-shell {
+  .form-shell {
     grid-template-columns: 1fr;
+  }
+
+  #problem .problem-editorial,
+  #problem h2,
+  #problem .problem-textbox,
+  #problem .problem-support,
+  #problem .problem-closing,
+  #problem .problem-label,
+  #authority .authority-content,
+  #authority .authority-content .eyebrow,
+  #authority .authority-content h2,
+  #authority .authority-content p,
+  #learn .learn-header,
+  #learn .learn-header .eyebrow,
+  #learn .learn-header h2,
+  #guide-form .form-intro,
+  #guide-form .form-intro .eyebrow,
+  #guide-form .form-intro h2,
+  #guide-form .form-intro p,
+  #testimonials .testimonials-intro,
+  #testimonials .testimonials-intro .eyebrow,
+  #testimonials .testimonials-intro h2,
+  #testimonials .testimonials-intro p,
+  #contact .cta-block,
+  #contact .eyebrow,
+  #contact h2,
+  #contact .cta-block > p:not(.eyebrow) {
+    text-align: center;
+    margin-inline: auto;
   }
 
   .authority-media img {
     min-height: 340px;
+  }
+
+  #authority .authority-link {
+    align-self: center;
+    margin-inline: auto;
   }
 
   .testimonials-grid {
@@ -1140,25 +1123,15 @@ input.is-invalid {
   }
 
   .hero {
-    min-height: auto;
+    min-height: min(760px, 100vh);
     display: block;
-    padding-top: 76px;
+    padding-top: 88px;
     padding-bottom: 52px;
   }
 
-  .hero-media,
-  .hero-overlay,
-  .hero::before {
-    position: relative;
-    inset: auto;
-  }
-
   .hero-media {
-    width: 100%;
-    aspect-ratio: 16 / 8.5;
-    max-height: 420px;
-    overflow: hidden;
-    border-radius: 24px;
+    width: 100vw;
+    z-index: 0;
   }
 
   .hero-media img,
@@ -1170,14 +1143,10 @@ input.is-invalid {
   }
 
   
-  .hero::before {
-    display: none;
-  }
-
   .hero-content {
     width: 100%;
     max-width: var(--text-column-width);
-    margin-top: 1.1rem;
+    margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     text-align: left;
@@ -1207,25 +1176,42 @@ input.is-invalid {
   #problem .problem-editorial,
   #problem .problem-textbox,
   .authority-content,
-  .learn-header,
   .form-intro,
   .testimonials-intro {
-    max-width: var(--text-column-width);
+    max-width: 100%;
+  }
+
+  .learn-header,
+  #learn h2,
+  #guide-form #form-title {
+    max-width: none;
+    width: 100%;
   }
 
   #problem .problem-textbox {
     width: 100%;
-    margin-inline: 0;
+    margin-inline: auto;
+  }
+
+  .testimonials-shell {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guide-item,
+  .guide-copy,
+  .guide-copy p {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
-@media (max-width: 760px) {
-  .container {
-    width: min(100% - 40px, var(--container-max));
-  }
-
+@media (max-width: 768px) {
   .section::after {
-    width: min(100% - 40px, var(--container-max));
+    width: min(100%, var(--container-max));
   }
 
   .header-inner {
@@ -1276,7 +1262,7 @@ input.is-invalid {
   }
 
   h2 {
-    max-width: 13ch;
+    max-width: 768px;
     font-size: clamp(2.1rem, 8vw, 3rem);
     text-wrap: balance;
     text-align: left;
@@ -1290,6 +1276,35 @@ input.is-invalid {
     line-height: 1.72;
   }
 
+  #problem .problem-editorial,
+  #problem h2,
+  #problem .problem-textbox,
+  #problem .problem-support,
+  #problem .problem-closing,
+  #problem .problem-label,
+  #authority .authority-content,
+  #authority .authority-content .eyebrow,
+  #authority .authority-content h2,
+  #authority .authority-content p,
+  #learn .learn-header,
+  #learn .learn-header .eyebrow,
+  #learn .learn-header h2,
+  #guide-form .form-intro,
+  #guide-form .form-intro .eyebrow,
+  #guide-form .form-intro h2,
+  #guide-form .form-intro p,
+  #testimonials .testimonials-intro,
+  #testimonials .testimonials-intro .eyebrow,
+  #testimonials .testimonials-intro h2,
+  #testimonials .testimonials-intro p,
+  #contact .cta-block,
+  #contact .eyebrow,
+  #contact h2,
+  #contact .cta-block > p:not(.eyebrow) {
+    text-align: center;
+    margin-inline: auto;
+  }
+
   .hero {
     min-height: auto;
     display: block;
@@ -1297,14 +1312,22 @@ input.is-invalid {
     padding-bottom: 42px;
   }
 
-  .hero-media {
-    position: relative;
-    inset: auto;
+  #authority .authority-link {
+    align-self: center;
+    margin-inline: auto;
+  }
+
+  .learn-header,
+  #learn h2,
+  #guide-form #form-title {
+    max-width: none;
     width: 100%;
-    aspect-ratio: 16 / 8.8;
-    max-height: 236px;
-    overflow: hidden;
-    border-radius: 20px;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
   }
 
   .hero-media img,
@@ -1315,15 +1338,12 @@ input.is-invalid {
     object-position: center 30%;
   }
 
-  /* recuperamos el eyebrow superior del hero */
   .hero-eyebrow {
-  display: block;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2;
-  margin: 0;
-}
+    display: block;
+    position: static;
+    z-index: 2;
+    margin: 0 0 0.85rem;
+  }
 
   .hero-overlay {
     position: absolute;
@@ -1334,15 +1354,10 @@ input.is-invalid {
       rgba(10, 10, 10, 0.22) 0%,
       rgba(10, 10, 10, 0.42) 100%
     );
-    border-radius: 20px;
-  }
-
-  .hero::before {
-    display: none;
   }
 
   .hero-content {
-    margin-top: 1rem;
+    margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
@@ -1394,6 +1409,10 @@ input.is-invalid {
     grid-template-columns: 1fr;
   }
 
+  .testimonials-shell {
+    grid-template-columns: 1fr;
+  }
+
   #problem .problem-editorial {
     display: block;
   }
@@ -1404,8 +1423,8 @@ input.is-invalid {
 
   #problem .problem-textbox {
     width: 100%;
-    max-width: 62ch;
-    margin-inline: 0;
+    max-width: 100%;
+    margin-inline: auto;
   }
 
   .learn-header {
