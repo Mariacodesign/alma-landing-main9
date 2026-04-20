@@ -94,19 +94,19 @@ h3 {
 }
 
 h1 {
+  max-width: 11ch;
   font-size: clamp(2.8rem, 6vw, 5.6rem);
   line-height: 1.02;
   letter-spacing: -0.025em;
   font-weight: 700;
-  max-width: 11ch;
 }
 
 h2 {
+  max-width: 768px;
   font-size: clamp(1.8rem, 3vw, 3rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
   font-weight: 600;
-  max-width: 768px;
 }
 
 h3 {
@@ -116,8 +116,8 @@ h3 {
 }
 
 .hero-copy {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
   max-width: 58ch;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
 }
 
 .text-link {
@@ -379,15 +379,15 @@ h3 {
 .hero-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
   max-width: 40rem;
   margin-left: 0;
   margin-right: auto;
   padding-bottom: 0;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .hero-eyebrow {
@@ -396,11 +396,11 @@ h3 {
 
 .hero-content h1 {
   max-width: 9.5ch;
+  margin: 0;
   font-size: clamp(3.6rem, 4.9vw, 5rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
   text-align: left;
-  margin: 0;
 }
 
 .hero-copy {
@@ -533,6 +533,10 @@ h3 {
   opacity: 0.92;
 }
 
+#problem .problem-copy {
+  padding-left: 0;
+}
+
 #problem .problem-support,
 #problem .problem-closing,
 #problem .problem-copy,
@@ -540,10 +544,6 @@ h3 {
   width: 100%;
   max-width: none;
   text-align: left;
-}
-
-#problem .problem-copy {
-  padding-left: 0;
 }
 
 #problem .problem-support {
@@ -897,31 +897,38 @@ input.is-invalid {
 }
 
 /* =========================================================
-   12. FOOTER / FINAL CTA
+   12. FINAL CTA / FOOTER
 ========================================================= */
 .cta-block {
   display: grid;
   gap: 1rem;
-  text-align: center;
   justify-items: center;
-  max-width: 46rem;
+  text-align: center;
+  width: 100%;
+  max-width: 42rem;
   margin-inline: auto;
 }
 
 #contact .eyebrow {
-  margin-left: 0;
-  text-align: left;
-  justify-self: start;
-}
-
-#contact h2,
-#contact .cta-block > p:not(.eyebrow) {
+  margin-inline: auto;
+  justify-self: center;
   text-align: center;
 }
 
 #contact h2 {
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 12ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+#contact .cta-block > p:not(.eyebrow) {
+  max-width: 38ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+#contact .cta-block .btn {
+  justify-self: center;
 }
 
 .site-footer {
@@ -979,8 +986,7 @@ input.is-invalid {
   .authority-content h2,
   #learn h2,
   #form-title,
-  .testimonials-intro h2,
-  #contact h2 {
+  .testimonials-intro h2 {
     font-size: clamp(2.8rem, 3.8vw, 4rem);
     line-height: 1.06;
     letter-spacing: -0.025em;
@@ -1006,10 +1012,42 @@ input.is-invalid {
   .authority-content .eyebrow,
   .learn-header .eyebrow,
   .form-intro .eyebrow,
-  .testimonials-intro .eyebrow,
-  #contact .eyebrow {
+  .testimonials-intro .eyebrow {
     text-align: left;
     align-self: flex-start;
+  }
+
+  #contact .cta-block {
+    max-width: 42rem;
+    margin-inline: auto;
+    justify-items: center;
+    text-align: center;
+  }
+
+  #contact .eyebrow {
+    margin-inline: auto;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+  }
+
+  #contact h2 {
+    max-width: 12ch;
+    margin-inline: auto;
+    text-align: center;
+    font-size: clamp(2.8rem, 3.8vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+  }
+
+  #contact .cta-block > p:not(.eyebrow) {
+    max-width: 38ch;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  #contact .cta-block .btn {
+    justify-self: center;
   }
 }
 
@@ -1155,9 +1193,7 @@ input.is-invalid {
     grid-template-columns: 1fr;
   }
 
-  #authority .authority-content,
-  #authority .authority-content h2,
-  #authority .authority-content p,
+  /* Secciones centradas en tablet excepto authority, que se corrige abajo */
   #learn .learn-header,
   #learn .learn-header h2,
   #guide-form .form-intro,
@@ -1175,11 +1211,6 @@ input.is-invalid {
 
   .authority-media img {
     min-height: 340px;
-  }
-
-  #authority .authority-link {
-    align-self: center;
-    margin-inline: auto;
   }
 
   .testimonials-shell {
@@ -1277,6 +1308,83 @@ input.is-invalid {
 }
 
 /* =========================================================
+   16B. TABLET SPECIFIC REFINEMENTS
+========================================================= */
+@media (min-width: 769px) and (max-width: 1060px) {
+  #learn .learn-header,
+  #learn .learn-header h2 {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  #authority .authority-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+
+  #authority .authority-content {
+    width: 100%;
+    max-width: 48rem;
+    margin-left: 0;
+    margin-right: auto;
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+    justify-items: start;
+  }
+
+  #authority .authority-content .eyebrow {
+    margin: 0 0 1rem 0;
+    text-align: left;
+    align-self: start;
+  }
+
+  #authority .authority-content h2 {
+    max-width: 18ch;
+    margin: 0;
+    text-align: left;
+    text-wrap: balance;
+    line-height: 1.06;
+  }
+
+  #authority .authority-content p {
+    max-width: 58ch;
+    margin: 0;
+    text-align: left;
+  }
+
+  #authority .authority-link {
+    margin-top: 1.15rem;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: start;
+    text-align: left;
+  }
+
+  #authority .authority-media {
+    width: 100%;
+  }
+
+  #authority .authority-media img {
+    min-height: 340px;
+  }
+
+  #guide-form .form-intro {
+    text-align: left;
+    justify-items: start;
+  }
+
+  #guide-form .form-intro .eyebrow {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    align-self: start;
+  }
+}
+
+/* =========================================================
    17. MOBILE
 ========================================================= */
 @media (max-width: 768px) {
@@ -1334,6 +1442,7 @@ input.is-invalid {
   h2 {
     max-width: 768px;
     font-size: clamp(2.1rem, 8vw, 3rem);
+    line-height: 1.06;
     text-wrap: balance;
     text-align: left;
   }
