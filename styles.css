@@ -567,6 +567,15 @@ h3 {
   max-width: 50rem;
 }
 
+#authority-title {
+  max-width: none;
+  text-wrap: wrap;
+}
+
+#authority .authority-content p {
+  max-width: none;
+}
+
 .authority-link {
   align-self: start;
   margin-top: 1.15rem;
@@ -595,8 +604,8 @@ h3 {
 .learn-header {
   display: grid;
   gap: 1rem;
-  width: min(100%, 62rem);
-  max-width: none;
+  
+  width:100%;
   margin: 0;
   text-align: left;
 }
@@ -707,8 +716,9 @@ h3 {
 
 #learn h2 {
   width: 100%;
-  max-width: 768px;
-  text-wrap: balance;
+  max-width:100%;
+  text-align: left;
+  text-wrap: wrap;
 }
 
 /* =========================================================
@@ -725,6 +735,11 @@ h3 {
   display: grid;
   gap: 1rem;
   max-width: 42rem;
+  text-align: left;
+}
+
+.form-intro h2,
+.form-intro p {
   text-align: left;
 }
 
@@ -824,6 +839,7 @@ input.is-invalid {
   display: grid;
   gap: 1rem;
   max-width: 38rem;
+  text-align: left;
 }
 
 .authority-content .eyebrow,
@@ -838,16 +854,22 @@ input.is-invalid {
 
 .testimonials-intro h2 {
   max-width: 768px;
+  text-align: left;
 }
 
 .testimonials-intro p:last-child {
   max-width: 42ch;
+  text-align: left;
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.testimonial-card:nth-child(3) {
+  grid-column: auto;
 }
 
 .testimonial-card {
@@ -916,7 +938,7 @@ input.is-invalid {
 }
 
 #contact h2 {
-  max-width: 12ch;
+  max-width: 700px;
   margin-inline: auto;
   text-align: center;
 }
@@ -1032,7 +1054,7 @@ input.is-invalid {
   }
 
   #contact h2 {
-    max-width: 12ch;
+    max-width: 700px;
     margin-inline: auto;
     text-align: center;
     font-size: clamp(2.8rem, 3.8vw, 4rem);
@@ -1172,6 +1194,10 @@ input.is-invalid {
     line-height: 1.06;
   }
 
+  #learn h2 {
+    text-wrap: wrap;
+  }
+
   p,
   .hero-copy,
   #problem .problem-support,
@@ -1194,14 +1220,6 @@ input.is-invalid {
   }
 
   /* Secciones centradas en tablet excepto authority, que se corrige abajo */
-  #learn .learn-header,
-  #learn .learn-header h2,
-  #guide-form .form-intro,
-  #guide-form .form-intro h2,
-  #guide-form .form-intro p,
-  #testimonials .testimonials-intro,
-  #testimonials .testimonials-intro h2,
-  #testimonials .testimonials-intro p,
   #contact .cta-block,
   #contact h2,
   #contact .cta-block > p:not(.eyebrow) {
@@ -1218,7 +1236,11 @@ input.is-invalid {
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-card:nth-child(3) {
+    grid-column: 1 / -1;
   }
 
   .hero {
@@ -1342,15 +1364,15 @@ input.is-invalid {
   }
 
   #authority .authority-content h2 {
-    max-width: 18ch;
+    max-width: none;
     margin: 0;
     text-align: left;
-    text-wrap: balance;
+    text-wrap: wrap;
     line-height: 1.06;
   }
 
   #authority .authority-content p {
-    max-width: 58ch;
+    max-width: none;
     margin: 0;
     text-align: left;
   }
@@ -1456,16 +1478,6 @@ input.is-invalid {
   }
 
   #authority .authority-content,
-  #authority .authority-content h2,
-  #authority .authority-content p,
-  #learn .learn-header,
-  #learn .learn-header h2,
-  #guide-form .form-intro,
-  #guide-form .form-intro h2,
-  #guide-form .form-intro p,
-  #testimonials .testimonials-intro,
-  #testimonials .testimonials-intro h2,
-  #testimonials .testimonials-intro p,
   #contact .cta-block,
   #contact h2,
   #contact .cta-block > p:not(.eyebrow) {
@@ -1568,6 +1580,10 @@ input.is-invalid {
     grid-template-columns: 1fr;
   }
 
+  .testimonial-card:nth-child(3) {
+    grid-column: auto;
+  }
+
   #problem .problem-label {
     margin: 0 0 0.85rem;
     padding: 0;
@@ -1584,9 +1600,13 @@ input.is-invalid {
     text-align: left;
   }
 
-  .problem-header,
-  .learn-header {
+  .problem-header {
     max-width: 62ch;
+    margin: 0;
+  }
+
+  .learn-header {
+    max-width: 100%;
     margin: 0;
   }
 
