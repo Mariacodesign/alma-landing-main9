@@ -1486,10 +1486,16 @@ input.is-invalid {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 100svh;
     display: block;
     padding-top: 70px;
-    padding-bottom: 42px;
+    padding-bottom: 20px;
+  }
+
+  .hero-shell {
+    min-height: calc(100svh - 70px);
+    display: flex;
+    align-items: stretch;
   }
 
   .hero-media {
@@ -1507,7 +1513,7 @@ input.is-invalid {
     display: block;
     position: static;
     z-index: 2;
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.7rem;
   }
 
   .hero-overlay {
@@ -1524,14 +1530,18 @@ input.is-invalid {
   .hero-content {
     width: 100%;
     max-width: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
+    padding-top: 1.6rem;
+    min-height: calc(100svh - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     text-align: left;
   }
 
   .hero-content > * + * {
-    margin-top: 0.85rem;
+    margin-top: 0.6rem;
   }
 
   .hero-content h1 {
@@ -1547,19 +1557,26 @@ input.is-invalid {
   .hero-copy {
     width: 100%;
     max-width: 100%;
-    font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.58;
     text-wrap: pretty;
     text-align: left;
+  }
+
+  .hero-copy + .hero-copy {
+    margin-top: 0.25rem;
+  }
+
+  .hero-copy:first-of-type {
+    margin-top: 1rem;
   }
 
   .hero-cta-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.55rem;
+    margin-top: 0.9rem;
+    gap: 0.45rem;
     width: 100%;
-    margin-top: 1.2rem;
   }
 
   .hero-cta-group .btn {
@@ -1571,7 +1588,8 @@ input.is-invalid {
   }
 
   .hero-note {
-    margin-top: 0.45rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.55rem;
     font-size: 0.62rem;
   }
 
