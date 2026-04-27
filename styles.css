@@ -391,7 +391,7 @@ h3 {
 }
 
 .hero-eyebrow {
-  margin: 0 0 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .hero-content h1 {
@@ -496,7 +496,7 @@ h3 {
 
 #problem .problem-label {
   display: block;
-  margin: 0;
+  margin-bottom: 1rem;
   padding: 0;
   letter-spacing: 0.12em;
   opacity: 1;
@@ -610,7 +610,7 @@ h3 {
 }
 
 .learn-header .eyebrow {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .guide-list {
@@ -844,9 +844,9 @@ input.is-invalid {
 .authority-content .eyebrow,
 .testimonials-intro .eyebrow {
   display: block;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   padding-top: 0;
-  padding-bottom: 1.4rem;
+  padding-bottom: 0;
   letter-spacing: 0.14em;
   opacity: 0.8;
 }
@@ -1094,7 +1094,7 @@ input.is-invalid {
   }
 
   .hero-eyebrow {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .hero-content .hero-copy:first-of-type {
@@ -1332,6 +1332,17 @@ input.is-invalid {
    16B. TABLET SPECIFIC REFINEMENTS
 ========================================================= */
 @media (min-width: 769px) and (max-width: 1060px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(min(760px, 100vh) - 95px);
+  }
+
+  .hero-note {
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+  }
+
   #learn .learn-header,
   #learn .learn-header h2 {
     margin-left: 0;
@@ -1485,14 +1496,22 @@ input.is-invalid {
   }
 
   .hero {
-    min-height: 100svh;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
     display: block;
-    padding-top: 70px;
-    padding-bottom: 20px;
+    padding-top: 52px;
+    padding-bottom: 0;
+    overflow: hidden;
   }
 
   .hero-shell {
-    min-height: calc(100svh - 70px);
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    min-height: calc(100dvh - 52px);
     display: flex;
     align-items: stretch;
   }
@@ -1500,38 +1519,47 @@ input.is-invalid {
   .hero-media {
     position: absolute;
     inset: 0;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
 
   .hero-media img,
   .hero-media video {
-    object-position: center 30%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% center;
   }
 
   .hero-eyebrow {
-    display: block;
     position: static;
-    z-index: 2;
-    margin: 0 0 0.7rem;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     display: block;
     background: linear-gradient(
       180deg,
-      rgba(10, 10, 10, 0.22) 0%,
-      rgba(10, 10, 10, 0.42) 100%
+      rgba(10, 10, 10, 0.24) 0%,
+      rgba(10, 10, 10, 0.48) 100%
     );
   }
 
   .hero-content {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 100%;
+    height: 100%;
+    min-height: 0;
     margin: 0;
-    padding-top: 1.6rem;
-    min-height: calc(100svh - 90px);
+    padding-top: clamp(2.4rem, 8svh, 4rem);
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1539,13 +1567,10 @@ input.is-invalid {
     text-align: left;
   }
 
-  .hero-content > * + * {
-    margin-top: 0.6rem;
-  }
-
   .hero-content h1 {
     width: 100%;
     max-width: 9ch;
+    margin: 0;
     font-size: clamp(2.2rem, 10vw, 3rem);
     line-height: 1.05;
     letter-spacing: -0.03em;
@@ -1556,27 +1581,32 @@ input.is-invalid {
   .hero-copy {
     width: 100%;
     max-width: 100%;
-    line-height: 1.58;
+    line-height: 1.55;
     text-wrap: pretty;
     text-align: left;
+    position: relative;
+    z-index: 2;
+    transform: translateY(19px);
   }
 
-  .hero-copy:first-of-type {
-    margin-top: 2rem;
+  #hero-title + .hero-copy {
+    margin-top: clamp(6.2rem, 24vh, 7.2rem);
   }
 
   .hero-copy + .hero-copy {
-    margin-top: 0.15rem;
+    margin-top: 0.25rem;
   }
 
   .hero-cta-group {
+    position: relative;
+    z-index: 2;
+    transform: translateY(19px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: auto;
-    padding-top: 1rem;
-    gap: 0.45rem;
     width: 100%;
+    margin-top: calc(1.1rem + 16px);
+    gap: 0.45rem;
   }
 
   .hero-cta-group .btn {
@@ -1588,8 +1618,8 @@ input.is-invalid {
   }
 
   .hero-note {
-    margin-top: 0.3rem;
-    margin-bottom: 0.65rem;
+    margin-top: auto;
+    margin-bottom: 0.35rem;
     font-size: 0.62rem;
   }
 
@@ -1603,7 +1633,7 @@ input.is-invalid {
   }
 
   #problem .problem-label {
-    margin: 0 0 0.85rem;
+    margin-bottom: 1rem;
     padding: 0;
   }
 
