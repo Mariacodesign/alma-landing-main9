@@ -1332,6 +1332,11 @@ input.is-invalid {
    16B. TABLET SPECIFIC REFINEMENTS
 ========================================================= */
 @media (min-width: 769px) and (max-width: 1060px) {
+  .hero-copy,
+  .hero-cta-group {
+    transform: translateY(45px);
+  }
+
   .hero-content {
     display: flex;
     flex-direction: column;
