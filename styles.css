@@ -1591,7 +1591,7 @@ input.is-invalid {
     text-align: left;
     position: relative;
     z-index: 2;
-    transform: translateY(19px);
+    transform: translateY(11px);
   }
 
   #hero-title + .hero-copy {
@@ -1605,7 +1605,7 @@ input.is-invalid {
   .hero-cta-group {
     position: relative;
     z-index: 2;
-    transform: translateY(19px);
+    transform: translateY(11px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
